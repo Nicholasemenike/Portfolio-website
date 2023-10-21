@@ -238,12 +238,44 @@ a.btn:nth-child(2)::before{
   width: 100%;
 }
 .home-image{
+  position: relative;
+}
+.img-box{
   text-align: center;
 }
 .img-box img{
   width: 100%;
   max-width: 350px;
   height: auto;
+}
+.liquid-shape{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 10%;
+}
+.liquid-shape2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 10%;
+  filter: blur(100px);
+}
+.img-box2{
+  text-align: center;
+}
+.home-image2{
+  position: relative;
+}
+.img-box2 img{
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+.liquid-shape:nth-child(2){
+  filter: blur(50px);
 }
 
 /* about section */
@@ -254,6 +286,10 @@ a.btn:nth-child(2)::before{
   grid-gap: 2em;
   background: var(--second-bg-color);
 }
+.about .img-about{
+  text-align: center;
+  position: relative;
+}
 .about .img-about img{
   max-width: 400px;
   height: auto;
@@ -261,7 +297,7 @@ a.btn:nth-child(2)::before{
 .about-content span{
   color: #fdfdfd;
   font-size: .8rem;
-  font-weight: 200;
+  font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -284,7 +320,7 @@ a.btn:nth-child(2)::before{
 .info-about2,
 .info-about3{
   background: var(--bg-color);
-  font-size: .5rem;
+  font-size: .7rem;
   position: absolute;
   padding: 10px;
   width: 90px;
@@ -292,7 +328,7 @@ a.btn:nth-child(2)::before{
   border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
   display: block;
   box-shadow: var(--neon-box-shadow);
-  border: 1px solid var(--hover-color);
+  border: 2px solid var(--hover-color);
   outline: 2px solid var(--bg-color);
   z-index: 100;
   
@@ -300,19 +336,198 @@ a.btn:nth-child(2)::before{
 }
 .info-about1{
   left: 10%;
-  top: 34%;
+  top: 40%;
 }
 .info-about2{
   left: 66%;
-  top: 15%;
+  top: 30%;
 }
 .info-about3{
   left: 61%;
-  top: 70%;
+  top: 80%;
 }
 .img-about span{
   color: var(--hover-color);
+  font-size: 1rem;
+  font-weight: 600;;
+}
 
+
+/*service section css*/
+.main-text{
+ width: 100%;
+ text-align: center;
+ margin-bottom: 2rem; 
+ color: var(--hover-color);
+}
+.main-text h2{
+  font-weight: 700;
+  font-size: var(--normal-font);
+}
+.main-text span{
+  color: #fdfdfd;
+  font-size: .8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.section-services{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-gap: 2rem;
+}
+.section-services .service-box{
+  flex: 1 1 18rem;
+  padding: 2rem 1rem 2rem;
+  text-align: center;
+  background: var(--second-bg-color);
+  transition: transform .4s;
+  border-radius: 10px;
+}
+.service-btn{
+  width: auto;
+  justify-content: center;
+}
+.service-box:hover{
+  transform: translateY(-.9rem);
+}
+.service-icon{ 
+  border: 2px solid var(--hover-color);
+  padding: 2rem;
+   background: var(--bg-color);
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 50%;
+  position: relative;
+  color: var(--hover-color);
+  box-shadow: var(--neon-box-shadow);
+  outline: 3px solid var(--bg-color);
+} 
+.service-box h3{
+  margin-top: 10px;
+  font-size: 1.8rem;
+}
+.service-box p{
+  margin: .5rem 0 1.5rem 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #bdbdbd;
+  line-height: 1.6;
+}
+
+/*skills section css*/
+.skills{
+  background: var(--second-bg-color);
+}
+.skill-main{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 30px;
+  grid-column-gap: 50px;
+}
+.skill-bar{
+  margin-bottom: 2.3rem;
+}
+.skill-main h3{
+  margin-bottom: 2rem;
+  font-size: var(--normal-font);
+  text-align: center;
+}
+.skill-left .skill-bar .info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.skill-left .skill-bar .bar{
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative;
+}
+.skill-bar .bar span{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: var(--hover-color);
+  border-radius: 25px;
+  box-shadow: var(--neon-box-shadow);
+}
+.skill-bar .bar .java{
+  width: 82%;
+  animation: java 2s;
+}
+.skill-bar .bar .python{
+  width: 72%;
+  animation: python 3s;
+}
+.skill-bar .bar .javascript{
+  width: 65%;
+  animation: javascript 4s;
+}
+.skill-bar .bar .html{
+  width: 62%;
+  animation: html 5s;
+}
+.skill-bar .bar .git{
+  width: 50%;
+  animation: git 6s;
+}
+.skill-bar .bar .ai{
+  width: 10%;
+  animation: ai 7s;
+}
+/*skill right*/
+.professional{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.box{
+  position: relative;
+  margin: 10px 0;
+  flex: 1 1 15rem;
+}
+.box .text{
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+.box .text small{
+  display: block;
+  font-weight: 600;
+}
+.box .text big{
+  font: 400;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle{
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle .points{
+  width: 10px;
+  height: 50px;
+  background-color: var(--bg-color);
+  position: absolute;
+  border-radius: 2px;
+  transform: rotate(calc(var(--i)*var(--rot))) translateY(-75px);
+}
+.points.marked{
+  animation: glow 0.3s linear forwards;
+  animation-delay: calc(var(--i)*0.05s);
 }
 
 
@@ -333,18 +548,7 @@ a.btn:nth-child(2)::before{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* keyframe */
+/* keyframes */
 @keyframes morph{
   0%,
   100%{
@@ -359,5 +563,67 @@ a.btn:nth-child(2)::before{
   80%{
     border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
   }
-  
+}
+@keyframes java{
+  0%{
+    width: 0%;
+  }
+
+  100%{
+    width: 82%;
+  }
+}@keyframes python{
+  0%{
+    width: 0%;
+  }
+
+  100%{
+    width: 72%;
+  }
+}
+@keyframes javascript{
+  0%{
+    width: 0%;
+  }
+
+  100%{
+    width: 65%;
+  }
+}
+@keyframes html{
+  0%{
+    width: 0%;
+  }
+
+  100%{
+    width: 62%;
+  }
+}
+@keyframes git{
+  0%{
+    width: 0%;
+  }
+
+  100%{
+    width: 50%;
+  }
+}
+@keyframes ai{
+  0%{
+    width: 0%;
+  }
+
+  100%{
+    width: 10%;
+  }
+}
+@keyframes glow{
+  0%{
+    background: var(--bg-color);
+    box-shadow: none;
+  }
+  100%{
+    background: var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+  }
 }
